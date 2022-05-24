@@ -91,6 +91,27 @@ main {
     margin: 0 auto;
 }
 
+.blogPage {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.blogPage h1 {
+    text-align: center;
+}
+
+.backBtn {
+    position: absolute;
+    top: 35px;
+    border-radius: 10px;
+    border: 1px solid rgb(36, 125, 197);
+    background-color: rgb(105, 105, 105);
+    color: white;
+    padding: 5px 10px;
+}
+
 @media (min-width: 768px) {
     .blog {
         width: 40%;

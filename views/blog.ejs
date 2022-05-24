@@ -1,7 +1,13 @@
 <%- include('partials/head') %>
     <%- include('partials/header') %>
-        <div class="mainWrapper">
-            <main>
-                Hello
-            </main>
+        <div class="blogPage">
+            <a href="/" class="backBtn">Back</a>
+            <h1><%=data.title%></h1>
+            <div>
+            <span>By: <%=data.name%></span><br>
+            <span><%=data.created_at.toLocaleString('LT')%></span>
+            </div>
+            <p>
+                <%=data.content%>
+            </p>
         </div>

@@ -30,7 +30,7 @@ router.get('/:id', async (req, res) => {
         JOIN user ON blog.author_id = user.id
         WHERE blog.id = ?
         `, [req.params.id])
-        console.log(data)
+        console.log(data[0])
         res.render('blog', { css: 'index.css', data: data[0], isAuthed: auth, token: req.token })
 
     } catch (err) {
