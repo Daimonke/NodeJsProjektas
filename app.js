@@ -1,6 +1,8 @@
 import 'dotenv/config';
 import express from 'express';
 import index from './routes/index.js'
+import users from './routes/api/users.js'
+import blog from './routes/api/blog.js'
 import path from 'path'
 import cookieParser from 'cookie-parser';
 
@@ -15,6 +17,8 @@ app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded( {extended:false} ));
 
+app.use('/api/users', users)
+app.use('/api/blog', blog)
 app.use('/', index)
 
 app.listen(PORT, () => console.log(`Server running at: http://localhost:${PORT}`))
