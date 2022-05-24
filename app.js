@@ -25,6 +25,7 @@ app.use('/api/blog', blog)
 app.use('/register', register)
 app.use('/login', login)
 app.use('/profile', profile)
+app.use('/addBlog', profile)
 app.use('/', index)
 
 app.listen(PORT, () => console.log(`Server running at: http://localhost:${PORT}`))
