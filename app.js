@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import express from 'express';
 import index from './routes/index.js'
+import register from './routes/register.js'
 import users from './routes/api/users.js'
 import blog from './routes/api/blog.js'
 import path from 'path'
@@ -19,6 +20,7 @@ app.use(express.urlencoded( {extended:false} ));
 
 app.use('/api/users', users)
 app.use('/api/blog', blog)
+app.use('/register', register)
 app.use('/', index)
 
 app.listen(PORT, () => console.log(`Server running at: http://localhost:${PORT}`))
