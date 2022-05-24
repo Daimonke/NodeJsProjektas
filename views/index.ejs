@@ -1,5 +1,23 @@
 <%- include('partials/head') %>
-<%- include('partials/header') %>
-<div class="mainWrapper">
-    
-</div>
+    <%- include('partials/header') %>
+        <div class="mainWrapper">
+            <main>
+                <% data.forEach(blog=> { %>
+                    <div class="blog">
+                        <h2>
+                            <%= blog.title %>
+                        </h2>
+                        <p class="truncate">
+                            <%= blog.content %>
+                        </p>
+                        <div class="blogInfo">
+                            <span>By: <%= blog.name %></span>
+                            <span>
+                                <%= blog.created_at.toLocaleString() %>
+                            </span>
+                        </div>
+                        <a href="">Read more</a>
+                    </div>
+                    <% }) %>
+            </main>
+        </div>

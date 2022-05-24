@@ -20,16 +20,77 @@ body {
     max-width: 80%;
     margin: 0 auto;
 }
+
 .headerNavList {
     display: flex;
     gap: 15px;
     list-style: none;
 }
+
 .headerNavList li a {
     color: rgb(66, 66, 66);
 }
 
-.mainWrapper {
-    max-width: 80%;
-    margin: 0 auto;
+main {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.blog {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(221, 221, 221);
+    color: rgb(56, 56, 56);
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.truncate {
+    line-height: 1.6rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    max-height: 3.2rem;
+    text-align: center;
+}
+
+.blogInfo {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid black;
+}
+
+.registerWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.registerWrapper form {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .blog {
+        width: 40%;
+    }
+}
+@media (min-width: 1200px) {
+    .blog {
+        width: 30%;
+    }
 }
