@@ -1,6 +1,18 @@
 <%- include('partials/head') %>
     <%- include('partials/header') %>
         <div class="mainWrapper">
+            <div class="sortWrapper">
+            <form action="/" method="get" id="sortForm">
+                <label for="sort">Sort By</label>
+                <select name="sort" id="sort">
+                    <option value="">---</option>
+                    <option value="name ASC" id="1">name - ASC</option>
+                    <option value="name DESC" id="2">name - DESC</option>
+                    <option value="created_at ASC" id="3">date - ASC</option>
+                    <option value="created_at DESC" id="4">date - DESC</option>
+                </select>
+            </form>
+            </div>
             <main>
                 <% data.forEach(blog=> { %>
                     <div class="blog">
@@ -16,8 +28,16 @@
                                 <%= blog.created_at.toLocaleString() %>
                             </span>
                         </div>
-                        <a href="">Read more</a>
+                        <a href="/<%=blog.id%>">Read more</a>
                     </div>
                     <% }) %>
             </main>
         </div>
+
+        <script>
+            const sortForm = document.getElementById('sortForm');
+            const sortSelect = document.getElementById('sort');
+            sortSelect.addEventListener('change', (e) => {
+                sortForm.submit();
+            });
+        </script>
