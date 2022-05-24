@@ -23,8 +23,11 @@ body {
 
 .headerNavList {
     display: flex;
+    align-items: center;
     gap: 15px;
     list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 main {
@@ -37,6 +40,7 @@ main {
 }
 
 .blog {
+    position: relative;
     border: 1px solid black;
     border-radius: 10px;
     background-color: rgb(221, 221, 221);
@@ -88,7 +92,7 @@ main {
 
 .sortWrapper {
     width: 80%;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 
 .blogPage {
@@ -110,6 +114,24 @@ main {
     background-color: rgb(105, 105, 105);
     color: white;
     padding: 5px 10px;
+}
+
+.deleteBtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    transition: 0.2s linear;
+
+}
+.deleteBtn:hover {
+    width: 35px;
+}
+
+.profileNav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media (min-width: 768px) {
