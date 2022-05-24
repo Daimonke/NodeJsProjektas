@@ -1,5 +1,35 @@
 body {
-    max-width: 80%;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0;
+}
+
+.headerWrapper {
+    background-color: rgb(223, 223, 223);
+}
+
+.headerLogo {
+    height: 100px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+.headerNavList {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+.headerNavList li a {
+    color: rgb(66, 66, 66);
+}
+
+.mainWrapper {
+    max-width: 80%;
+    margin: 0 auto;
 }
