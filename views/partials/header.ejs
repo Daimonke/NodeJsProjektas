@@ -10,7 +10,7 @@
             <ul class="headerNavList">
                 <% if (isAuthed) { %>
                     <li>
-                        <a href="/">
+                        <a href="/profile">
                             <div class="profile">
                                 <img src="https://icon-library.com/images/my-profile-icon-png/my-profile-icon-png-3.jpg"
                                     alt="profile" width="30">
@@ -18,7 +18,11 @@
                                     <%=token.username%>
                                 </span>
                             </div>
+                            
                         </a>
+                        <li>
+                            <a href="/logout"><button>Logout</button></a>
+                        </li>
                     </li>
                     <% } else { %>
                         <li>

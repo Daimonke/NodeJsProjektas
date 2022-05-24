@@ -1,5 +1,36 @@
 <%- include('partials/head') %>
     <%- include('partials/header') %>
-        <div class="blogPage">
-           profile
-        </div>
+    <div class="profileNav">
+        <h1>MY BLOGS</h1>
+        <a href="/addBlog">
+            <button>Create new blog</button>
+        </a>
+    </div>
+        <main>
+            <% data.forEach(blog=> { %>
+                <div class="blog">
+                    <img onclick="deleteBlog('<%=blog.id%>')" class="deleteBtn"
+                        src="https://icon-library.com/images/icon-delete/icon-delete-19.jpg" alt="profile" width="30">
+                    <h2>
+                        <%= blog.title %>
+                    </h2>
+                    <p class="truncate">
+                        <%= blog.content %>
+                    </p>
+                    <div class="blogInfo">
+                        <span>By: <%= blog.name %></span>
+                        <span>
+                            <%= blog.created_at.toLocaleString() %>
+                        </span>
+                    </div>
+                    <a href="/<%=blog.id%>">Read more</a>
+                </div>
+                <% }) %>
+        </main>
+
+        <script>
+            const deleteBlog = (id) => {
+                fetch(`/profile/${id}`, { method: 'DELETE' })
+                    .then(window.location.replace('/profile'))
+            }
+        </script>

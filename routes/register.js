@@ -32,9 +32,9 @@ router.post('/', async (req, res) => {
         VALUES(?, ?, ?)
         `, [username, hashedPassword, new Date().toLocaleString('LT')]);
         // Create token
-        const token = jwt.sign({ username: username, id: registeredUser[0].insertId }, process.env.JWT_SECRET, { expiresIn: '25m' })
+        const token = jwt.sign({ username: username, id: registeredUser[0].insertId }, process.env.JWT_SECRET, { expiresIn: '1h' })
         // Send response
-        res.cookie('token', token, { maxAge: 900000, httpOnly: true })
+        res.cookie('token', token, { maxAge: 1000*60*60, httpOnly: true })
             .redirect('/')
     } catch (err) {
         res.json({ err: err })

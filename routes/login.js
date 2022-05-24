@@ -26,9 +26,9 @@ router.post('/', async (req, res) => {
         const compare = await bcrypt.compare(password, user[0].password)
         if(!compare) return res.json({ err: 'Wrong password' })
         // Create token
-        const token = jwt.sign({ username: user[0].name, id: user[0].id }, process.env.JWT_SECRET, { expiresIn: '25m' })
+        const token = jwt.sign({ username: user[0].name, id: user[0].id }, process.env.JWT_SECRET, { expiresIn: '1h' })
         // Send response
-        res.cookie('token', token, { maxAge: 900000, httpOnly: true })
+        res.cookie('token', token, { maxAge: 1000*60*60, httpOnly: true })
             .redirect('/')
     } catch (err) {
         res.json({ err: err })
