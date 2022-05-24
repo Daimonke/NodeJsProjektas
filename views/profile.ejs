@@ -30,7 +30,7 @@
 
         <script>
             const deleteBlog = (id) => {
-                fetch(`/profile/${id}`, { method: 'DELETE' })
-                    .then(window.location.replace('/profile'))
+                fetch(`/user/${id}`, { method: 'DELETE' })
+                    .then(window.location.replace('/user'))
             }
         </script>

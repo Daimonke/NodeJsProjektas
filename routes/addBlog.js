@@ -24,7 +24,7 @@ router.post('/', async (req, res) => {
         INSERT INTO blog (title, content, author_id, created_at)
         VALUES (?, ?, ?, ?)
         `, [title, content, req.token.id, new Date().toLocaleString('LT')])
-        res.redirect('/profile')
+        res.redirect('/user')
     } catch (err) {
         res.json({ err: err });
     }
