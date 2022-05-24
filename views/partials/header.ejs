@@ -1,19 +1,34 @@
 <div class="headerWrapper">
-<header class="header">
-    <div class="header__logo">
-        <a href="/">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Blogger_logo.svg/1200px-Blogger_logo.svg.png" alt="logo" class="headerLogo">
-        </a>
-    </div>
-    <div class="headerNav">
-        <ul class="headerNavList">
-        <li>
-            <a href="/login">Login</a>
-        </li>
-        <li>
-            <a href="/register">Register</a>
-        </li>
-        </ul>
-    </div>
-</header>
+    <header class="header">
+        <div class="header__logo">
+            <a href="/">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Blogger_logo.svg/1200px-Blogger_logo.svg.png"
+                    alt="logo" class="headerLogo">
+            </a>
+        </div>
+        <div class="headerNav">
+            <ul class="headerNavList">
+                <% if (isAuthed) { %>
+                    <li>
+                        <a href="/">
+                            <div class="profile">
+                                <img src="https://icon-library.com/images/my-profile-icon-png/my-profile-icon-png-3.jpg"
+                                    alt="profile" width="30">
+                                <span>
+                                    <%=token.username%>
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                    <% } else { %>
+                        <li>
+                            <a href="/login">Login</a>
+                        </li>
+                        <li>
+                            <a href="/register">Register</a>
+                        </li>
+                        <% } %>
+            </ul>
+        </div>
+    </header>
 </div>

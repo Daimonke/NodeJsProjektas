@@ -27,10 +27,6 @@ body {
     list-style: none;
 }
 
-.headerNavList li a {
-    color: rgb(66, 66, 66);
-}
-
 main {
     width: 80%;
     margin: 20px auto;
@@ -82,6 +78,17 @@ main {
 .registerWrapper form {
     display: flex;
     flex-direction: column;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.sortWrapper {
+    width: 80%;
+    margin: 0 auto;
 }
 
 @media (min-width: 768px) {
